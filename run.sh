@@ -20,10 +20,10 @@ if [ "$1" = "import" ]; then
     sudo -u postgres psql -d gis -c "ALTER TABLE geometry_columns OWNER TO renderer;"
     sudo -u postgres psql -d gis -c "ALTER TABLE spatial_ref_sys OWNER TO renderer;"
 
-    # Download Luxembourg as sample if no data is provided
+    # Download Netherlands as sample if no data is provided
     if [ ! -f /data.osm.pbf ]; then
-        echo "WARNING: No import file at /data.osm.pbf, so importing Luxembourg as example..."
-        wget -nv http://download.geofabrik.de/europe/luxembourg-latest.osm.pbf -O /data.osm.pbf
+        echo "WARNING: No import file at /data.osm.pbf, so importing Netherlands as example..."
+        wget -nv http://download.geofabrik.de/europe/netherlands-latest.osm.pbf -O /data.osm.pbf
     fi
 
     # Import data
